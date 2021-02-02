@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="general">
+
+        <div id="screen1" class="pantalla1" style="display: block">
+            <div class="characters">
+                <div onclick="selectPersonaje('Ryu')"  id="Ryu"><img class="avatar" src="img/ryu.jpg"></div>
+                <div onclick="selectPersonaje('Ken')"  id="Ken"><img class="avatar" src="img/ken.jpg"></div>
+                <div onclick="selectPersonaje('Blanka')"  id="Blanka"><img class="avatar" src="img/blanka.jpg"></div>
+                <div onclick="selectPersonaje('Chun')"  id="Chun"><img class="avatar" src="img/chunli.jpg"></div>
+            </div>
+            
+            <div id="mensaje"></div>
+        </div>
+
+        <div id="screen2" class="pantalla2" style="display: none">
+
+            <div class="luchadoresCombate">
+                <div id="contrincante1"></div>
+                <div id="contrincante2"></div>
+            </div>
+
+            <div class="botonPegar">
+                <div id="strike" class="attack" onclick="atacar()"></div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    
+    
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
