@@ -40,6 +40,13 @@ let p1 = "";
 
 let p2 = "";
 
+//traductor
+let allplayers = {
+    "Ryu": player1,
+    "Ken": player2,
+    "Blanka": player3,
+    "Chun": player4
+};
 
 //Funciones 
 
@@ -69,14 +76,14 @@ let cambiaPantalla = (faseAhora,faseFutura) => {
 
 let selectPersonaje = (personaje) => {
     if(p1 == ""){
-        p1 = personaje;
+        p1 = allplayers[personaje];
 
         document.getElementById(personaje).className = "avatar2";
         document.getElementById(personaje).onclick = "";
 
 
     }else{
-        p2 = personaje;
+        p2 = allplayers[personaje];
 
         document.getElementById(personaje).className = "avatar2";
         document.getElementById(personaje).onclick = "";
@@ -85,19 +92,23 @@ let selectPersonaje = (personaje) => {
 
         let mensaje = document.getElementById("mensaje");
 
-        mensaje.innerHTML = `Has escogido al primer personaje que es ${p1} y al segundo que es ${p2}`;
+        mensaje.innerHTML = `Has escogido al primer personaje que es ${p1.nombre} y al segundo que es ${p2.nombre}`;
         
         //Cargo los personajes en screen2
 
         let showPlayer1 = document.getElementById("contrincante1");
         let showPlayer2 = document.getElementById("contrincante2");
 
-        showPlayer1.innerHTML = `<div ><img class="estiloContrincante" src="img/${p1}.jpg"></div>`;
-        showPlayer2.innerHTML = `<div ><img class="estiloContrincante" src="img/${p2}.jpg"></div>`;
+        showPlayer1.innerHTML = `<div ><img class="estiloContrincante" src="img/${p1.nombre}.jpg"></div>`;
+        showPlayer2.innerHTML = `<div ><img class="estiloContrincante" src="img/${p2.nombre}.jpg"></div>`;
 
         console.log(showPlayer1.innerHTML);
 
-        
+        //Asignaría los luchadores... 
+
+        console.log(p1);
+        console.log(p2);
+
         //Cambiar de pantalla porque ya tenemos a los personajes elegidos
 
         resolveIn(1000).then(delay => {
@@ -116,23 +127,23 @@ let atacar = () => {
     if(turno == 0){
         if(especial == 3){
             console.log("ATAQUE ESPECIAL");
-            player1.ataqueEspecial(player2);
+            p1.ataqueEspecial(p2);
         }else{
 
-            player1.ataque(player2);
+            p1.ataque(p2);
         }
     }else{
         if(especial == 3){
             console.log("ATAQUE ESPECIAL");
-            player2.ataqueEspecial(player1);
+            p2.ataqueEspecial(p1);
         }else{
-            player2.ataque(player1);
+            p2.ataque(p1);
 
         }
     };
 
-    console.log("Vida 1:" + player1.vida);
-    console.log("Vida 2:" + player2.vida);
+    console.log(p1.nombre + p1.vida);
+    console.log(p2.nombre + p2.vida);
     
 };
 

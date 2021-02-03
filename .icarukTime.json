@@ -1,15 +1,15 @@
 {
-    "idleHeartbeats": 1112,
-    "navigatingHeartbeats": 578,
-    "totalCodingHeartbeats": 6097,
+    "idleHeartbeats": 1663,
+    "navigatingHeartbeats": 1172,
+    "totalCodingHeartbeats": 6861,
     "languageHeartbeats": {
-        "html": 1689,
-        "javascript": 3159,
+        "html": 1884,
+        "javascript": 3728,
         "css": 1249
     },
     "fileHeartbeats": {
-        "index.html": 1689,
-        "js/main.js": 3159,
+        "index.html": 1884,
+        "js/main.js": 3728,
         "css/style.css": 1249
     }
 }
